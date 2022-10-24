@@ -1,0 +1,84 @@
+<!-- colocar logo e fazer botão para limpar-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qual ônibus pegar | Isabella</title>
+  <style type="text/css" media="screen">
+        .titulo{
+                text-shadow: 1px 2px 3px black;
+        }
+        body {
+              background-color: #6495ED;
+        }
+        .nome {
+                margin:  0 auto;
+                display: flex;
+                width: 50vw;
+                justify-content: space-around;
+                margin-top: 50px
+        }
+        #paragrafo {
+                      font-weight: bold; 
+
+        }
+        #l1 {
+                font-weight: bold; 
+
+        }
+        #emtu {
+            position: absolute; 
+            left: 90px; /* posiciona a 90px para a esquerda */ 
+            top: 70px; /* posiciona a 70px para baixo */
+        }
+
+  </style>
+      <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+      <script type="text/javascript">
+
+        function busao() {
+           const hora = document.getElementById("hora").value
+           if(hora == 16) {
+            const minutos = document.getElementById("minuto").value
+              if(minutos > 40) {
+                alert("904B, andar 4 quadras :(")
+              } else if(minutos < 20) {
+                alert("904B, andar 4 quadras")
+              } else if (minutos > 20 && minutos < 40) {
+                alert("934EX ou 934, andar menos uhul")
+                alert("NÃO PASSAR PELA RUA DA CONSTITUIÇÃO")
+              }
+           } else if (minutos == null){
+            alert("digite os minutos")
+           } else {
+            alert("perdeu o ônibus")
+           }
+          }
+
+      </script>
+
+</head>
+<body>
+<header style="background: #191970; padding: 20px 50px; color: #1E90FF;">
+    <h1 style="text-align: center;">
+                                           Isabella <br>
+
+  <span class="titulo" style="font-family: 'Pacifico', cursive; font-size: 90px; line-height: 90px">
+                                                   ÔNIBUS? </span>
+                                                  <img src="emtu-logo.png" id="emtu" width="220" height="80">
+  </h1>
+  </header> 
+  <div id="paragrafo">
+    <p id="texto">Por favor digite a hora atual para saber qual ônibus pegar.</p>
+  </div>
+  <div>
+    <label id="l1"> hora atual: 
+    <input type="text" name="nome" required placeholder="insira a hora" class="nome" id="hora">
+    <input type="text" name="nome" required placeholder="insira os minutos" class="nome" id="minuto">
+  </label>
+        <button id="b1" onclick="busao()">Verificar Ônibus</button>
+
+  </div>
+</body>
+</html>
